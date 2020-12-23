@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { TaskItem } from "./task-item";
 
 const pendingTodos = [
     { item: "task" },
@@ -9,13 +10,8 @@ const pendingTodos = [
 ]
 
 //Functionl Component that can take props
-const TaskItem = props => {
-    return ( 
-        <ul>
-            <li>{props.item}</li>
-        </ul>
-    )
-}
+//React sees this and assumes you want to create a functional component
+
 
 //Class component
 export default class Pending extends Component {
@@ -28,15 +24,17 @@ export default class Pending extends Component {
             isComplete: false
         }
     }
+    //Call functional component from within the render function
     render() {
         return ( 
         <div>
             <h2>{this.props.heading}</h2>
-            <li><TaskItem item="Some task"/></li>
+            <li><TaskItem item="Task One"/></li>
+            <li><TaskItem item="Task Two"/></li>
+            <li><TaskItem item="Task Three"/></li>
+            <li><TaskItem item="Task Four"/></li>
+            <li><TaskItem item="Task Five"/></li>
         </div> 
-
-           
-      
         )
     }
 }
