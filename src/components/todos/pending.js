@@ -8,6 +8,15 @@ const pendingTodos = [
     { item: "task" }
 ]
 
+//Functionl Component that can take props
+const TaskItem = props => {
+    return ( 
+        <ul>
+            <li>{props.item}</li>
+        </ul>
+    )
+}
+
 //Class component
 export default class Pending extends Component {
     constructor(props) {
@@ -15,10 +24,19 @@ export default class Pending extends Component {
 
         this.state = {
             pending: pendingTodos,
-            isOpen: true
+            isPending: true,
+            isComplete: false
         }
     }
     render() {
-        return  <h2>{this.props.heading}</h2>
+        return ( 
+        <div>
+            <h2>{this.props.heading}</h2>
+            <li><TaskItem item="Some task"/></li>
+        </div> 
+
+           
+      
+        )
     }
 }

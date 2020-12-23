@@ -8,6 +8,7 @@ export default class App extends Component {
       <div>
         <h1>Todo list</h1>
         <Pending heading="Pending Todos" />
+        <Pending heading="Completed Todos" />
       </div>
     );
   }
